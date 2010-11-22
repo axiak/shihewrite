@@ -26,7 +26,7 @@ STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'static'),
 )
 STATICFILES_URL = '/media/'
-MEDIA_URL = '/files/'
+MEDIA_URL = '/media/'
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'templates'),)
 
 ROOT_URLCONF = 'urls'

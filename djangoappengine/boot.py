@@ -158,7 +158,6 @@ def setup_project():
 
     os.environ.update(env_ext)
 
-    print PROJECT_DIR
     extra_paths = [PROJECT_DIR, os.path.join(os.path.dirname(__file__), 'lib')]
     zip_packages_dir = os.path.join(PROJECT_DIR, 'zip-packages')
 

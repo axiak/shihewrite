@@ -1,53 +1,78 @@
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-    dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
-    xml:lang="{% firstof LANGUAGE_CODE 'en' %}"
-    lang="{% firstof LANGUAGE_CODE 'en' %}">
-  <head>
-    <title>{% block title %}{% endblock %} - Nonrel-testapp</title>
+<!doctype html>  
 
-    {% block css %}
-    {% endblock %}
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    {% block preload_js %}
-    {% endblock %}
+  <title>ShiheWrite{% block title %}{% endblock %}</title>
+  <meta name="description" content="{% block meta-description %}{% endblock %}">
+  <meta name="author" content="{% block meta-author %}Mike Axiak{% endblock %}">
 
-    {% block extra-head %}{% endblock %}
-  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <body>
-    <div id="header">
-      <a id="logo" href="/">Nonrel-testapp</a>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css?v=2">
+  <script src="{{ MEDIA_URL }}js/libs/modernizr-1.6.min.js"></script>
+
+  {% block extrahead %}{% endblock %}
+
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+
+    </header>
+    
+    <div id="main">
+
     </div>
+    
+    <footer>
 
-    <div class="columns">
-      <div id="content" class="column">
-        {% block content-header %}
-          {% if error %}<div class="error">{{ error }}</div>{% endif %}
-          {% if info %}<div class="info">{{ info }}</div>{% endif %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="info">{{ message }}</div>
-            {% endfor %}
-          {% endif %}
-        {% endblock %}
+    </footer>
+  </div> <!-- end of #container -->
 
-        {% block content %}{% endblock %}
-      </div>
 
-      <div id="sidebar" class="column">
-        {% block sidebar %}
-        {% endblock %}
-      </div>
-    </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ MEDIA_URL }}js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+  
+  
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="{{ MEDIA_URL }}js/plugins.js"></script>
+  <script src="{{ MEDIA_URL }}js/script.js"></script>
+  <!-- end concatenated and minified scripts-->
+  
+  
+  <!--[if lt IE 7 ]>
+    <script src="{{ MEDIA_URL }}js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); </script>
+  <![endif]-->
 
-    <div id="footer">
-      <p>Powered by <a href="http://www.allbuttonspressed.com/projects/django-nonrel">Django-nonrel</a></p>
-    </div>
+  <!-- yui profiler and profileviewer - remove for production -->
+  <script src="{{ MEDIA_URL }}js/profiling/yahoo-profiling.min.js"></script>
+  <script src="{{ MEDIA_URL }}js/profiling/config.js"></script>
+  <!-- end profiling code -->
 
-    {% block js %}
-    {% endblock %}
-  </body>
+
+  <!-- change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-19826372-1'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+  
+</body>
 </html>
