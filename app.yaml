@@ -26,6 +26,10 @@ handlers:
 - url: /media/
   static_dir: media/
 
+- url: /genmedia/
+  static_dir: _generated_media/
+  expiration: '365d'
+
 - url: /.*
   script: djangoappengine/main/main.py
 
@@ -44,4 +48,4 @@ skip_files:
 #- ^djangotoolbox/
 #- ^dbindexer/
 #- ^mediagenerator/
-
+#- ^debug_toolbar/

@@ -1,0 +1,17 @@
+* { font-family: 'Crimson Text', arial, serif; }
+h1, h2, h3 { font-family: 'Nobile', arial, serif; }
+
+h1 {
+  padding: 10px;
+  font-size: 3em;
+}
+
+p, span {
+  font-size: 1.2em;
+}
+
+footer {
+  margin-top: 10em;
+  font-size: 0.8em;
+}
+  
